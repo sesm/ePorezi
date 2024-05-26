@@ -257,6 +257,7 @@ public class SmartBox {
    }
 
    static {
+      System.setProperty("sun.security.smartcardio.library", "/System/Library/Frameworks/PCSC.framework/PCSC");
       environment = SmartBox.Environment.UNKNOWN;
    }
 
