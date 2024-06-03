@@ -12,7 +12,10 @@
 
     <target name="compile">
         <mkdir dir="./out/production/ePorezi"/>
-        <javac srcdir="." destdir="out/production/ePorezi" />
+        <javac srcdir="." destdir="out/production/ePorezi" source="1.8" target="1.8">
+            <compilerarg value="--add-exports=jdk.crypto.pkcs11/sun.security.pkcs11=ALL-UNNAMED"/>
+            <compilerarg value="--add-opens=jdk.crypto.pkcs11/sun.security.pkcs11=ALL-UNNAMED"/>
+        </javac>
     </target>
 
     <target name="bundle" depends="compile,jar" description="Create App Bundle">
